@@ -47,9 +47,47 @@
 									</header>
 									<span class="image main"><img src="images/smartfarming.jpeg" alt="" /></span>
 									<span class="image main"><img src="images/Diagrama.jpeg" alt="" /></span>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<h3>Introducion</h3>
+									<p>
+										En este proyecto se implementa internet de las cosas, en este caso es para realizar una Smart Farming, se implementan 5 variables, las cuales humedad en tierra, humedad en ambiente, luminosidad, contaminación y gases, y por último cantidad de agua. 
+										Para cada una de estas variables se utiliza un sensor, en estos casos sería el sensor de humedad en suelo (FC28), sensor de humedad en ambiente (DHT11), sensor de luminosidad y uv (UVM30a), contaminación y gases (MQ-135), y el sensor de cantidad de agua (sensor flujo de agua). Los anteriores sensores mencionados son los que se utilizan para realizar el funcionamiento de cada una de las variables antes mencionadas. 
+										Por otra parte, se realiza una animación para que se pueda comprender mejor la topología realizada para este proyecto de Smart Farming, en cada una de las animaciones se ve paso a paso cada elemento que se necesita para que la información que obtiene el sensor se envíe a un teléfono inteligente y que los dueños puedan observar si es la cantidad de agua, o de luz correcta, para ver la humedad, la contaminación que hay en los cultivos.
+									</p>
+									<h3>Metodología del diseño</h3>
+									<p>
+											Para cultivar diferentes tipos de plantas se deben tener en cuenta diferentes aspectos algunos de los mas importantes son humedad en tierra, rayos uv, temperatura ambiente, contaminación por gases para un mejor control también se tiene un sensor de cantidad de agua utilizada para regar las plantas. 
+											Es importante conocer la humedad en la tierra ya que cada planta tiene sus propias características para crecer de la mejor manera entonces con estos sensores en tierra podemos controlar la cantidad que se le aplica a cada tipo de plantación para llegar a la humedad en tierra correcta que se utiliza para los diferentes cultivos.
+											La siguiente variable es importante para la germinación de semillas como para los primeros días de vida de algunas plantas en especifico que no pueden estar expuestas a una gran cantidad de rayos uv, para poder tener un crecimiento correcto, también se utiliza para llevar un control de la cantidad de rayos uv que reciben por día, si las plantas no recibieron la cantidad suficiente se puede implementar un sistema de iluminación artificial durante la noche para proporcionar el faltante.
+											En el caso de la temperatura en el ambiente tiene un registro por año junto a la cantidad de agua utilizada, para que así cada año se mejore el uso de los materiales, como también el uso del agua esto para que se utilice solamente la necesaria y conseguir la mejor cosecha posible. 
+											El dióxido de carbono hace que las estomas de las plantas se estrechen, por lo que se reducen las pérdidas de agua y mejora el rendimiento en el uso de agua. El aumento de las concentraciones de dióxido de carbono en la atmósfera también estimulará la fotosíntesis y tendrá un efecto fertilizante en numerosos cultivos.
+
+									</p>
+									<h3>Análisis del diseño</h3>
+									<p>
+										El FC-28 cuenta con una placa de medición estándar que permite obtener la medición como valor analógico o como una salida digital, activada cuando la humedad supera un cierto umbral. Los valores del umbral van desde 0 sumergido en agua, a 1023 en el aire (o en un suelo muy seco). Un suelo ligeramente húmero daría valores típicos de 600-700. Un suelo seco tendrá valores de 800-1023.
+										El DHT11 es un sensor digital de temperatura y humedad relativa de bajo costo y fácil uso. Integra un termistor para medir el aire circundante, y muestra los datos mediante una señal digital en el pin de datos (no posee salida analógica).
+										No tenemos que confundirnos entre analógico y digital. Aunque lo conectemos a un pin digital, se trata de un dispositivo analógico. Dentro del propio dispositivo se hace la conversión entre analógico y digital.
+										Por lo tanto, partimos de una señal analógica que luego es convertida en formato digital y se enviará al microcontrolador. La trama de datos es de 40 bits correspondiente a la información de la temperatura del DHT11.
+										En el caso del UVM30a es un sensor que detecta la intensidad de rayos UV. Tiene una gama espectral amplia que va desde los 200nm y llega hasta los 370 nm. La señal de este sensor es analógica, por otra parte, funciona con un voltaje que va desde los 3 vdc hasta los 5 vdc, también es de respuesta rápida lo cual en este caso permite que la persona que esta al cuidado de los cultivos tenga la información rápido, para así evitar que el cultivo este expuesto por mucho tiempo a los rayos uv. Este sensor trabaja con una temperatura que va desde los -20° C hasta los 85° C.
+										El sensor MQ-135 detecta diferentes componentes químicos en el aire, puede detectar varias sustancias o solamente una, en este caso detecta el benceno, alcohol, humo y la calidad del aire, para que este funcione necesita tener un calentador de 5V. Con esto se puede detectar si el aire está muy contaminado para que así se tomen acciones las cuales reduzca esta contaminación y evitar que afecte a las plantaciones.
+										El sensor flujo de agua es el monitoreo de fluidos en las tuberías, este se encargar de detectar si el flujo del agua aumentó o disminuyó, y también la presión que hay en la tubería. Este sensor se utiliza para que la persona que esta a cargo de los cultivos pueda estar pendiente de que los cultivos reciban el agua necesaria durante la semana, para que así puedan tener el desarrollo esperado, y sea un cultivo exitoso. 
+									</p>
+									<h3>Limitaciones </h3>
+									<p>
+										MQ-135 deben ser calibrados antes de su uso, aun después de calibrados no representa una fuente totalmente confiable al no poder leer todos lo gases que podrían estar presentes en los cultivos por diferentes factores.
+										FC-28 depende de la profundidad de donde se encuentre un sensor que por algún motivo quede muy cerca de la superficie evitaría que las plantas reciban la cantidad de agua que pueden llegar a ocupar por el periodo de tiempo en el que se dure en detectar este problema.
+										DHT11 tiene un rango de medición que para la mayoría de casos es totalmente funcional pero para algunos casos en especifico como en plantaciones que ocupen un periodo de frio este sensor no daría datos útiles por debajo de los cero grados.
+										UVM30 y Flujo de agua no presentan limitaciones para las tareas en las que se utilizaran.
+									</p>
+									<h3>topología</h3>
+									<div>	
+										<span class="image main"><img src="images/Diagrama.jpeg" alt="" /></span>
+									</div>
+									<p>
+										Módulo Sensor Ultravioleta UVM30A. (s/f). Suconel | Tienda electrónica | Colombia. Recuperado el 14 de junio de 2022, de https://suconel.com/product/modulo-sensor-ultravioleta-uvm30a/
+										Luis. (2016, octubre 21). Detector de gases con Arduino y la familia de sensores MQ. Luis Llamas; Luis. https://www.luisllamas.es/arduino-detector-gas-mq/
+										¿Qué es un Sensor de Flujo? (s/f). Eicos.com. Recuperado el 14 de junio de 2022, de http://www.eicos.com/datos-tecnicos/que-es-un-sensor-de-flujo/
+									</p>
 								</div>
 							</section>
 
